@@ -1,6 +1,9 @@
 Linear Classifier API
 =====================
 
+
+Train and Predict
+^^^^^^^^^^^^^^^^^
 Linear methods are methods based on
 `LibLinear <https://www.csie.ntu.edu.tw/~cjlin/liblinear/>`_.
 The simplest usage is::
@@ -8,7 +11,6 @@ The simplest usage is::
    model = linear.train_1vsrest(train_y, train_x, options)
    predict = linear.predict_values(model, test_x)
 
-.. See `the user guide <../guides/linear_guides.html>`_ for more details.
 
 .. currentmodule:: libmultilabel.linear
 
@@ -20,13 +22,80 @@ The simplest usage is::
 
 .. autofunction:: train_cost_sensitive_micro
 
+.. autofunction:: train_binary_and_multiclass
+
+.. autofunction:: train_tree
+
 .. autofunction:: predict_values
+
+.. autofunction:: get_topk_labels
+
+.. autofunction:: get_positive_labels
+
+.. autoclass:: FlatModel
+   :members:
+
+.. autoclass:: TreeModel
+   :members:
+
+Load Dataset
+^^^^^^^^^^^^
+
+.. autofunction:: load_dataset
+
+Preprocessor
+^^^^^^^^^^^^
 
 .. autoclass:: Preprocessor
    :members:
+   :special-members: __init__
 
-   .. automethod:: __init__
+Load and Save Pipeline
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. autofunction:: save_pipeline
 
 .. autofunction:: load_pipeline
+
+
+Metrics
+^^^^^^^
+Metrics are specified by their names in ``compute_metrics`` and ``get_metrics``.
+The possible metric names are:
+
+* ``'P@K'``, where ``K`` is a positive integer
+* ``'R@K'``, where ``K`` is a positive integer
+* ``'RP@K'``, where ``K`` is a positive integer
+* ``'NDCG@K'``, where ``K`` is a positive integer
+* ``'Macro-F1'``
+* ``'Micro-F1'``
+
+Their definitions are given in the `implementation document <https://www.csie.ntu.edu.tw/~cjlin/papers/libmultilabel/libmultilabel_implementation.pdf>`_.
+
+.. autofunction:: compute_metrics
+
+.. autofunction:: get_metrics
+
+.. autoclass:: MetricCollection
+   :members:
+
+.. autofunction:: tabulate_metrics
+
+Grid Search with Sklearn Estimators
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. autoclass:: MultiLabelEstimator
+   :members:
+
+   .. automethod:: __init__
+
+   .. automethod:: fit
+
+   .. automethod:: predict
+
+   .. automethod:: score
+
+.. autoclass:: GridSearchCV
+   :members:
+
+   .. automethod:: __init__

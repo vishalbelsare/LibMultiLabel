@@ -1,5 +1,5 @@
-Installation, Dataset Formats, and Modules
-==========================================
+Installation and Dataset Formats
+=============================================
 
 To work with the command line interface, firstly
 
@@ -24,9 +24,9 @@ Install LibMultiLabel from Source
 
 * Environment
 
-    * Python: 3.7+
-    * CUDA: 10.2 (if training neural networks by GPU)
-    * Pytorch 1.12+
+    * Python: 3.8+
+    * CUDA: 11.8, 12.1 (if training neural networks by GPU)
+    * Pytorch 2.0.1+
 
 It is optional but highly recommended to
 create a virtual environment.
@@ -37,7 +37,7 @@ and then create a virtual enviroment as follows.
 
 .. code-block:: bash
 
-    conda create -n LibMultiLabel python=3.7
+    conda create -n LibMultiLabel python=3.8
     conda activate LibMultiLabel
 
 * Clone `LibMultiLabel <https://github.com/ASUS-AICS/LibMultiLabel>`_.
@@ -47,11 +47,17 @@ and then create a virtual enviroment as follows.
     git clone https://github.com/ASUS-AICS/LibMultiLabel.git
     cd LibMultiLabel
 
-* Install the latest development version, run:
+* Install the default dependencies with:
 
 .. code-block:: bash
 
     pip3 install -r requirements.txt
+
+* If you are using neural networks, install additional dependencies with:
+
+.. code-block:: bash
+
+    pip3 install -r requirements_nn.txt
 
 If you have a different version of CUDA,
 follow the installation instructions for PyTorch LTS at
@@ -116,3 +122,4 @@ Some sample lines are as follows::
 
     1,3,5 1:0.1 9:0.2 13:0.3
     2,4,6 2:0.4 10:0.5 14:0.4
+

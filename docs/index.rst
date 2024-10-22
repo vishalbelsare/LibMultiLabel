@@ -1,39 +1,26 @@
-LibMultiLabel - a Library for Multi-label Text Classification
-=============================================================
+LibMultiLabel - a Library for Multi-class and Multi-label Classification
+==============================================================================
 
-LibMultiLabel is a library for multi-label text classification
-and a simple command line tool with the following functionalities
+LibMultiLabel is a library for binary, multi-class, and multi-label classification. It has the following functionalities
 
 - end-to-end services from raw texts to final evaluation/analysis
 - support for common neural network architectures and linear classsifiers
 - easy hyper-parameter selection
 
-For installation of LibMultiLabel, you can visit the `Command Line Interface <cli/ov_data_format.html>`_  or the `APIs <api/api.html>`_.
+LibMultiLabel can be used through either `Command Line Interface <cli_index.html>`_ or `APIs <library_index.html>`_. Check their respective documents for installation instructions.
 
-For practical tips, please see the `User Guide <https://www.csie.ntu.edu.tw/~cjlin/papers/libmultilabel/userguide.pdf>`_.
-
-.. toctree::
-    :caption: Command Line Interface
-    :maxdepth: 1
-    :hidden:
-
-    cli/ov_data_format
-    cli/linear
-    cli/nn
-    cli/flags
-    User Guide <https://www.csie.ntu.edu.tw/~cjlin/papers/libmultilabel/userguide.pdf>
+For practical use, please see the `Tutorials <tutorial.html>`_. For Implementation details, see this `document <https://www.csie.ntu.edu.tw/~cjlin/papers/libmultilabel/libmultilabel_implementation.pdf>`_.
 
 .. toctree::
-   :caption: Library
    :maxdepth: 1
    :hidden:
 
-   api/api
-   api/linear_tutorial
-   api/nn_tutorial
-   api/linear
-   api/nn
-
+   cli_index
+   library_index
+   tutorial
+   Implementation Document <https://www.csie.ntu.edu.tw/~cjlin/papers/libmultilabel/libmultilabel_implementation.pdf>
+   papers
+   
 
 ..
    Indices and tables
